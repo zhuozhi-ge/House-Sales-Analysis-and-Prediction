@@ -1,8 +1,16 @@
 # XoX Sales Analysis and Prediction
-We are an agency helping our customers purchase XoX (a made-up product) from various makers. Price is one of the most important things we care about. We need to estimate the price of a XoX before we recommend it to our customers. However, the estimations vary significantly with our employees' experience.
+**Problem statement**
+<br>Historical sales data of product XoX has been provided. The product is featured by numerical informations as cost, weight, height, depth and categorical informations as maker, ingredient, product type and product level. All these features and sales history are known to affect future purchase price, but it's challenging to figure out which features are more inportant in predicting a future pruchase
 
-We would like you to build a machine learning model to accurately predict the price for a future purchase and provide insights to help us explain the predicted price to our customers. Please note that neither our customers nor us have any knowledge about machine learning. A sample of our sales record is available in ../data/sales.csv.
+**Feature processing**
+<br>Categorical features would be converted to numerical by dummy (one hot) or ordinal (label encoder) transformation
+<br>Numerical features would be scaled if necessary (when not tree based model)
 
-1. Preprocess, clean, analyze and visualized the provided data. Any thing you would like us to know about the price?
-2. Build a machine learning model to help us determine the price for a purchase. Discuss why you choose the approaches, what alternatives you consider, and any concerns you have. How is the performance of your model?
-3. Help us understand how the price is predicted.
+**Machine learning**
+<br>1, Predict product price (target) for a future pruchase based on given informations (features) by applying regression models
+<br>2, Choose the best model (model performance) and interpret the predicted price (feature importance)
+
+**Metrics**
+<br>Model performance can be evaluated in different ways, here R2 score is used
+<br>![image-2.png](attachment:image-2.png)
+<br>R2 score: the proportion of the variance in the dependent variable (target) that is predictable from the independent variables (features). R2 score is no greater than 1 and the higher R2 the better model performance. A negative R2 score suggests that the model performance is worse than mean value prediction, and R2 score of 1 indicates a perfect prediction.
